@@ -1,0 +1,15 @@
+<% if flash[:alert] %>
+    <aside class="notice"><%= flash[:alert] %></aside>
+<% end %>
+
+<%= form_tag do %>
+    <h2> Login </h2>
+
+    <%= label_tag :email, 'Email:' %>
+    <%= text_field_tag :email, params[:email] %>
+
+    <%= label_tag :password, 'Password:' %>
+    <%= password_field_tag :password, params[:password] %>
+
+    <%= submit_tag "Login" %>
+<% end %>
