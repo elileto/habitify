@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  complete: false
+  task: MyString
+  counter: 1
+  difficultyLvl: 1
+  experiencePoints: 1
+
+two:
+  complete: false
+  task: MyString
+  counter: 1
+  difficultyLvl: 1
+  experiencePoints: 1

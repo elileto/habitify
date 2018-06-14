@@ -1,0 +1,2 @@
+module DaysOfTheWeeksHelper
+end

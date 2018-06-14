@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Days Of The Weeks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @days_of_the_weeks.each do |days_of_the_week| %>
+      <tr>
+        <td><%= days_of_the_week.monday %></td>
+        <td><%= days_of_the_week.tuesday %></td>
+        <td><%= days_of_the_week.wednesday %></td>
+        <td><%= days_of_the_week.thursday %></td>
+        <td><%= days_of_the_week.friday %></td>
+        <td><%= days_of_the_week.saturday %></td>
+        <td><%= days_of_the_week.sunday %></td>
+        <td><%= link_to 'Show', days_of_the_week %></td>
+        <td><%= link_to 'Edit', edit_days_of_the_week_path(days_of_the_week) %></td>
+        <td><%= link_to 'Destroy', days_of_the_week, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Days Of The Week', new_days_of_the_week_path %>
