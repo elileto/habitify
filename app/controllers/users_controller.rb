@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: 'User #{@user.firstName} #({@user.lastName} was successfully created.' }
+        format.html { redirect_to profiles_url, notice: 'User #{@user.firstName} was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url, notice: 'User #{@user.firstName} #({@user.lastName} was successfully updated.' }
+        format.html { redirect_to users_url, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -70,6 +70,8 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:firstName, :lastName, :imageUrl, :email, :password, :password_confirmation)
+      params.require(:user).permit(:firstName, :lastName, :imageUrl, :email, 
+        :password, :password_confirmation, profile_attributes: [:gender])
     end
 end
+

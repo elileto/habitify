@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>User Id:</strong>
+  <%= @profile.user_id %>
+</p>
+
+
+<p>
   <strong>Rubies:</strong>
   <%= @profile.rubies %>
 </p>
@@ -8,6 +14,22 @@
 <p>
   <strong>Gender:</strong>
   <%= @profile.gender %>
+</p>
+
+
+<p>
+  <strong>Experience:</strong>
+  <%= @profile.experience %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @profile.level %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @profile.health %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |

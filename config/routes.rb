@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
+
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
   
   resources :days_of_the_weeks
   resources :list_items

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    
     has_secure_password
     before_save {self.email = email.downcase}
     validates :firstName, presence: true
@@ -9,4 +10,5 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
     #validates :password, presence: true, length: {minimum: 8}
     has_one :profile, dependent: :destroy
+    accepts_nested_attributes_for :profile
 end
