@@ -1,1 +1,29 @@
-Made it!
+
+<%=@user.imageUrl%>
+<%= @user.firstName %> <%= @user.lastName %>
+<%= @user.email%>
+
+Gender: <%= @profile.gender %>
+Experience: <%= @profile.experience %>
+Health: <%= @profile.health %>
+Level: <%= @profile.level %>
+Rubies: <%= @profile.rubies %>
+
+To Do Due Date: <%= @todo.dueDate%>
+
+Daily Streak: <%= @daily.streak%>
+
+<% @todoListItems.each do |item| %>
+<p> <%=item.experiencePoints%> </p>
+<p> <%=item.task%> </p>
+<p> <%=item.counter%> </p>
+<p> <%=item.difficultyLvl%> </p>
+<p> <%=item.complete%> </p>
+
+<%end%>
+<%= link_to 'New Todo', new_todo_list_item_path(:todo_id=>@todo.id) %>
+
+<%= %>
+<%= debug(params) %>
+
+ 

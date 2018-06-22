@@ -47,10 +47,21 @@
     <%= ff.text_field :gender %>
   </div>
 <% end %>
+    <%= form.fields_for :todo do |ff| %>
+  <div>
+    <%= ff.hidden_field :user_id %>
+  </div>
+<% end %>
+
+    <%= form.fields_for :daily do |ff| %>
+  <div>
+    <%= ff.hidden_field :user_id %>
+  </div>
+<% end %>
 
 
     <%= form.submit %>
 
 <% end %>
 
-<%= debug(params) %>
+

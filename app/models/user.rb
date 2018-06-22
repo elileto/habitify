@@ -10,5 +10,7 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
     #validates :password, presence: true, length: {minimum: 8}
     has_one :profile, dependent: :destroy
-    accepts_nested_attributes_for :profile
+    has_one :todo, dependent: :destroy
+    has_one :daily, dependent: :destroy
+    accepts_nested_attributes_for :profile, :todo, :daily
 end

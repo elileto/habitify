@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Complete:</strong>
+  <%= @todo_list_item.complete %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @todo_list_item.task %>
+</p>
+
+<p>
+  <strong>Counter:</strong>
+  <%= @todo_list_item.counter %>
+</p>
+
+<p>
+  <strong>Difficulty Level:</strong>
+  <%= @todo_list_item.difficultyLvl %>
+</p>
+
+<p>
+  <strong>Experience Points:</strong>
+  <%= @todo_list_item.experiencePoints %>
+</p>
+
+<%= link_to 'Edit', edit_todo_list_item_path(@todo_list_item) %> |
+<%= link_to 'Back', todo_list_items_path %>

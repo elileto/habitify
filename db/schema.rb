@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_153145) do
+ActiveRecord::Schema.define(version: 2018_06_18_012806) do
 
   create_table "dailies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "streak"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "days_of_the_weeks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -26,16 +27,6 @@ ActiveRecord::Schema.define(version: 2018_06_15_153145) do
     t.boolean "friday"
     t.boolean "saturday"
     t.boolean "sunday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "list_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.boolean "complete"
-    t.string "task"
-    t.integer "counter"
-    t.integer "difficultyLvl"
-    t.integer "experiencePoints"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,10 +42,22 @@ ActiveRecord::Schema.define(version: 2018_06_15_153145) do
     t.integer "user_id"
   end
 
+  create_table "todo_list_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.boolean "complete"
+    t.string "task"
+    t.integer "counter"
+    t.integer "difficultyLvl"
+    t.integer "experiencePoints"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "todo_id"
+  end
+
   create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "dueDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

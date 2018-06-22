@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
   
   resources :days_of_the_weeks
-  resources :list_items
+  resources :todo_list_items
   resources :todos
-  resources :dailies
+  resources :dailies 
   resources :profiles
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -69,6 +69,6 @@ class DailiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daily_params
-      params.require(:daily).permit(:streak)
+      params.require(:daily).permit(:streak, :user_id)
     end
 end
